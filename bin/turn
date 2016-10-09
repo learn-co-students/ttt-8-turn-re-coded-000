@@ -1,1 +1,12 @@
 #!/usr/bin/env ruby
+require_relative '../lib/turn.rb'
+
+board = Array.new(9," ")
+ #[" ", " ", " ", " ", " ", " ", " ", " ", " "]
+ puts "Welcome to Tic Tac Toe!"
+ puts "please enter 1-9"
+ input = gets.strip
+ position = input_to_index(input)
+ move(board, position, "X")
+ display_board(board)
+ turn(board)
