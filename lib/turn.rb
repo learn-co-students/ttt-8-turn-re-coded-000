@@ -46,16 +46,12 @@ def position_taken? (board,position)
 end
 
 def turn(board)
-  display_board(board)
   puts "Please enter 1-9:"
-
-  position=gets.strip
-  if valid_move?(board,position)
-      move(board,position)
-      display_board(board)
-    else
-      puts "Please enter 1-9:"
-      position=gets.strip
-      
+  input = gets.strip
+  if valid_move?(board, input)
+    move(board, input)
+    display_board(board)
+  else
+    turn(board)
   end
 end
