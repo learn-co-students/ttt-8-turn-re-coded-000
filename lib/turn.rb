@@ -6,12 +6,12 @@ def display_board(board)
     puts " #{board[6]} | #{board[7]} | #{board[8]} "
    end
     def valid_move?(board, position)
-      if position.to_i.between?(1,9)
-         if !position_taken?(board, position.to_i-1)
+      if position.to_i.between?(1,9) && !position_taken?(board, position.to_i-1)
             true
+          else false
            end
          end
-        end
+        
          def move(board,position,value ="X")
             board[position.to_i - 1] = value
            end
